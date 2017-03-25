@@ -1,0 +1,41 @@
+# Don't load the oh-my-zsh's library. Takes too long. No need.
+antigen use oh-my-zsh
+
+antigen bundles <<EOBUNDLES
+  # Guess what to install when running an unknown command.
+  command-not-found
+
+  # Python helpers
+  pip
+  virtualenvwrapper
+
+  # Utils
+  git
+  https://gist.github.com/SteveByerly/9e8a6e313e7e996228fbe0faad65e2b1
+
+  # Helper for extracting different types of archives.
+  extract
+
+  # Tracks your most used directories, based on 'frecency'.
+  robbyrussell/oh-my-zsh plugins/z
+
+  # nicoulaj's moar completion files for zsh.
+  zsh-users/zsh-completions src
+
+  # Syntax highlighting on the readline
+  zsh-users/zsh-syntax-highlighting
+
+  # history search
+  zsh-users/zsh-history-substring-search ./zsh-history-substring-search.zsh
+
+  # suggestions
+  tarruda/zsh-autosuggestions
+
+  # colors for all files!
+  trapd00r/zsh-syntax-highlighting-filetypes
+
+  # dont set a theme, because pure does it all
+  mafredri/zsh-async
+  sindresorhus/pure
+
+EOBUNDLES

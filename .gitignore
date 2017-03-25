@@ -1,0 +1,50 @@
+#
+# Files to keep from this repo
+#
+.extra
+
+# working files
+.vim/viminfo
+.vim/swaps/*
+.vim/undo
+
+# git credential file
+.gitconfig.local
+
+# no thx
+node_modules
+
+# Folder view configuration files
+.DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+# random
+shilocation
+
+# VS
+.vscode/
+
+# SublimeText
+*.sublime-project
+*.sublime-workspace
+
+# 
+# Python
+#
+
+# virtualenv
+venv/
+.env
+
+# Compiled Python files
+__pycache__/
+*.py[cod]
+*$py.class
