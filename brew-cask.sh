@@ -21,6 +21,9 @@ brew cask install flux
 # dev
 brew cask install iterm2
 brew cask install sublime-text
+brew cask install dotnet
+brew cask install visual-studio-code
+brew cask install virtualbox
 brew cask install imagealpha
 brew cask install imageoptim
 

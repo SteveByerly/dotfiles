@@ -58,6 +58,13 @@ brew install mtr
     sudo chown root $mtrlocation/sbin/mtr
 
 
+# Install dev tools
+brew install python3
+brew install kubernetes-cli
+brew install kubernetes-helm
+brew install kops
+brew install hugo
+
 # Install other useful binaries
 brew install the_silver_searcher
 brew install fzf
