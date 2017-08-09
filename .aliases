@@ -93,5 +93,10 @@ alias brew_update="brew -v update; brew upgrade --force-bottle --cleanup; brew c
 alias update_brew_npm_gem='brew_update; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update --no-document'
 
 # Python aliases
-alias rm-pyc="find . -name '*.pyc' -exec rm -rf {} \;"
+alias rm_pyc="find . -name '*.pyc' -exec rm -rf {} \;"
+
+# Docker aliases
+alias docker_clean_img="docker rmi $(docker images -f dangling=true -q)"
+alias docker_clean_container="docker rm $(docker ps -a -f status=exited -q)"
+alias docker_clean_volumes="docker volume rm $(docker volume ls -f dangling=true -q)"
 
