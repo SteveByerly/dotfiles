@@ -1,5 +1,12 @@
 # Steve's dotfiles
 
+## Pre-Reqs
+
+* Create/Add an SSH key in [GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
+* Install [Homebrew](https://brew.sh/)
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 
 ## Setup
 #### installing & using
