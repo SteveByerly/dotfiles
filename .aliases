@@ -94,9 +94,3 @@ alias update_brew_npm_gem='brew_update; npm install npm -g; npm update -g; sudo 
 
 # Python aliases
 alias rm_pyc="find . -name '*.pyc' -exec rm -rf {} \;"
-
-# Docker aliases
-alias docker_clean_img="docker rmi $(docker images -f dangling=true -q)"
-alias docker_clean_container="docker rm $(docker ps -a -f status=exited -q)"
-alias docker_clean_volumes="docker volume rm $(docker volume ls -f dangling=true -q)"
-

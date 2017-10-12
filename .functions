@@ -169,3 +169,10 @@ function nullify() {
 shellswitch () {
 	chsh -s $(brew --prefix)/bin/$1
 }
+
+# Cleanup dangling Docker stuff
+docker_cleanup() {
+  docker rmi $(docker images -f dangling=true -q)
+  docker rm $(docker ps -a -f status=exited -q)
+  docker volume rm $(docker volume ls -f dangling=true -q)
+}

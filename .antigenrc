@@ -8,6 +8,7 @@ antigen bundles <<EOBUNDLES
   # Python helpers
   pip
   virtualenvwrapper
+  # https://gist.github.com/SteveByerly/0ffc974ac08a0ec112026d7ffa30406b
 
   # Utils
   git
