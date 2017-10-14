@@ -40,3 +40,6 @@ antigen bundles <<EOBUNDLES
   sindresorhus/pure
 
 EOBUNDLES
+
+# Tell Antigen that you're done.
+antigen apply

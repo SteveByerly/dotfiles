@@ -5,7 +5,7 @@
 
 
 ##############################################################################################################
-###  backup old machine's key items
+### begin backup old machine's key items
 
 mkdir -p ~/migration/home/
 mkdir -p ~/migration/Library/"Application Support"/
@@ -78,13 +78,13 @@ cp -Rp ~/Library/Application\ Support/Code\ -\ Insider* ~/migration/Library/"App
 # maybe ~/Pictures and such
 cp -Rp ~/Pictures ~/migration
 
-### end of old machine backup
+### end old machine backup
 ##############################################################################################################
 
 
 
 ##############################################################################################################
-### XCode Command Line Tools
+### begin XCode Command Line Tools
 #      thx https://github.com/alrra/dotfiles/blob/ff123ca9b9b/os/os_x/installs/install_xcode.sh
 
 if ! xcode-select --print-path &> /dev/null; then
@@ -119,13 +119,13 @@ if ! xcode-select --print-path &> /dev/null; then
     print_result $? 'Agree with the XCode Command Line Tools licence'
 
 fi
-###
+### end XCode Command Line Tools
 ##############################################################################################################
 
 
 
 ##############################################################################################################
-### homebrew!
+### begin homebrew
 
 # (if your machine has /usr/local locked down (like google's), you can do this to place everything in ~/.homebrew
 mkdir $HOME/.homebrew && curl -L https://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C $HOME/.homebrew
@@ -135,14 +135,31 @@ export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
 ./brew.sh
 ./brew-cask.sh
 
-### end of homebrew
+### end homebrew
 ##############################################################################################################
 
 
 
+##############################################################################################################
+### begin Python setup
+###
+
+# Install pip
+sudo easy_install pip
+
+# Setup to start using venvs
+sudo pip install awscli virtualenvwrapper --ignore-installed six
+
+# for the c alias (syntax highlighted cat)
+sudo pip install Pygments
+
+### end Python setup
+##############################################################################################################
+
+
 
 ##############################################################################################################
-### install of common things
+### begin install of common things
 ###
 
 # github.com/jamiew/git-friendly
@@ -185,10 +202,6 @@ git clone https://github.com/thebitguru/play-button-itunes-patch ~/code/play-but
 # 	* then you grab public URL and send off your video message in a heartbeat.
 
 
-# for the c alias (syntax highlighted cat)
-sudo easy_install Pygments
-
-
 # change to bash 4 (installed by homebrew)
 BASHPATH=$(brew --prefix)/bin/bash
 #sudo echo $BASHPATH >> /etc/shells
@@ -206,9 +219,14 @@ echo $BASH_VERSION # should be 4.x not the old 3.2.X
 ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
 
 
-###
+### end install of common things
 ##############################################################################################################
 
+
+
+##############################################################################################################
+### begin git setup
+###
 
 
 # improve perf of git inside of chromium checkout
@@ -225,9 +243,13 @@ git update-index --untracked-cache
 # also this unrelated thing
 git config user.email "steven.j.byerly@gmail.com"
 
+### end git setup
+##############################################################################################################
+
+
 
 ##############################################################################################################
-### remaining configuration
+### begin remaining configuration
 ###
 
 # go read mathias, paulmillr, gf3, alraa's dotfiles to see what's worth stealing.
@@ -241,13 +263,13 @@ sh .osx
 
 # setup and run Rescuetime!
 
-###
+### end remaining configuration
 ##############################################################################################################
 
 
 
 ##############################################################################################################
-### symlinks to link dotfiles into ~/
+### begin symlinks to link dotfiles into ~/
 ###
 
 #   move git credentials into ~/.gitconfig.local    	http://stackoverflow.com/a/13615531/89484
@@ -258,5 +280,5 @@ sh .osx
 
 # add manual symlink for .ssh/config and probably .config/fish
 
-###
+### end symlinks to link dotfiles into ~/
 ##############################################################################################################

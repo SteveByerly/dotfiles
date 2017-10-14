@@ -10,5 +10,6 @@ export LANG="en_US"
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-# AWS
-export AWS_DEFAULT_PROFILE=proddev4
+# Virtualenv
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/code
