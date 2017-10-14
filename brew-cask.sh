@@ -1,46 +1,83 @@
 #!/bin/bash
 
+brew update && brew upgrade
 
-# to maintain cask ....
-#     brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup`
+# -----------------------------------------------------------
+# Cask Utils
+# -----------------------------------------------------------
+brew tap caskroom/versions
+brew tap caskroom/fonts
 
-
-# Install native apps
-
-brew install caskroom/cask/brew-cask
-# brew tap caskroom/versions
-
-# daily
+# -----------------------------------------------------------
+# OS Utils
+# -----------------------------------------------------------
 brew cask install spectacle
-brew cask install dropbox
-brew cask install gyazo
 brew cask install 1password
-brew cask install rescuetime
 brew cask install flux
 
-# dev
-brew cask install iterm2
+# -----------------------------------------------------------
+# Storage Management
+# -----------------------------------------------------------
+brew cask install dropbox
+brew cask install google-backup-and-sync
+brew cask install disk-inventory-x
+
+# -----------------------------------------------------------
+# IDEs
+# -----------------------------------------------------------
 brew cask install sublime-text
-brew cask install dotnet
-brew cask install dotnet-sdk
 brew cask install visual-studio-code
-brew cask install virtualbox
-brew cask install imagealpha
-brew cask install imageoptim
+brew cask install sequel-pro
 
-# fun
-brew cask install limechat
-brew cask install miro-video-converter
-brew cask install horndis               # usb tethering
+# -----------------------------------------------------------
+# Browsers
+# -----------------------------------------------------------
+brew cask install google-chrome
+brew cask install firefox
+brew cask install brave
 
-# browsers
 brew cask install google-chrome-canary
 brew cask install firefoxnightly
 brew cask install chromium
 
-# less often
-brew cask install disk-inventory-x
-brew cask install screenflow
+# -----------------------------------------------------------
+# Dev Tools
+# -----------------------------------------------------------
+brew cask install iterm2
+brew cask install dotnet
+brew cask install dotnet-sdk
+brew cask install virtualbox
+brew cask install docker
+brew cask install imagealpha
+brew cask install imageoptim
+
+# -----------------------------------------------------------
+# Media
+# -----------------------------------------------------------
 brew cask install vlc
-brew cask install gpgtools
+brew cask install spotify
+brew cask install miro-video-converter
+
+# -----------------------------------------------------------
+# Display Capture
+# -----------------------------------------------------------
+# Video editing and screen recording 
+brew cask install screenflow
+# An instant way to take a screenshot/GIF and bookmark
+# anything you see
+brew cask install gyazo
+# Simple animated screen captures
 brew cask install licecap
+
+# -----------------------------------------------------------
+# Misc
+# -----------------------------------------------------------
+brew cask install gpgtools
+# USB tethering
+brew cask install horndis
+
+# -----------------------------------------------------------
+# Cleanup
+# -----------------------------------------------------------
+brew cleanup
+brew cask cleanup
