@@ -48,8 +48,6 @@ brew cask install dotnet
 brew cask install dotnet-sdk
 brew cask install virtualbox
 brew cask install docker
-brew cask install imagealpha
-brew cask install imageoptim
 
 # -----------------------------------------------------------
 # Media
@@ -57,6 +55,13 @@ brew cask install imageoptim
 brew cask install vlc
 brew cask install spotify
 brew cask install miro-video-converter
+
+# -----------------------------------------------------------
+# Image Editing
+# -----------------------------------------------------------
+brew cask install gimp
+brew cask install imagealpha
+brew cask install imageoptim
 
 # -----------------------------------------------------------
 # Display Capture
