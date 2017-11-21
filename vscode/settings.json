@@ -31,24 +31,34 @@
                 }
             },
             {
-                "name": "Typescript/Angular",
+                "name": "Typescript/Angular Templates",
                 "scope": [
                     "cast.expr.ts",
-                    "entity.name.type.ts",
                     "meta.decorator.ts entity.other.attribute-name",
                     "meta.type.parameters.ts support.type.primitive.ts",
+                    "source.ts meta.tag.attribute-name"
                 ],
                 "settings": {
                     "fontStyle": "italic"
                 }
             },
             {
-                "name": "test",
+                "name": "TS Control Flow",
                 "scope": [
                     "keyword.control.flow.ts",
                 ],
                 "settings": {
-                    "color": "#ff9d00"
+                    "foreground": "#ff9d00"
+                }
+            },
+            {
+                "name": "TS ",
+                "scope": [
+                    "meta.objectliteral.ts punctuation.definition.string.begin",
+                    "meta.objectliteral.ts punctuation.definition.string.end"
+                ],
+                "settings": {
+                    "foreground": "#2EFF00",
                 }
             }
         ],
@@ -56,6 +66,9 @@
     "explorer.autoReveal": false,
     "html.suggest.angular1": false,
     "sublimeTextKeymap.promptV3Features": true,
+    "vscode_custom_css.imports": [
+        "file:///Users/skiba/.vscode.styles.css"
+    ],
     "workbench.colorTheme": "Cobalt2",
     "workbench.iconTheme": "material-icon-theme",
     "vsicons.projectDetection.disableDetect": true,
