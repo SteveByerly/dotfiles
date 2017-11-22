@@ -64,10 +64,12 @@
         ],
     },
     "explorer.autoReveal": false,
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
     "html.suggest.angular1": false,
     "sublimeTextKeymap.promptV3Features": true,
     "vscode_custom_css.imports": [
-        "file:///Users/skiba/.vscode.styles.css"
+        "file://./.styles.css"
     ],
     "workbench.colorTheme": "Cobalt2",
     "workbench.iconTheme": "material-icon-theme",

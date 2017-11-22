@@ -114,8 +114,10 @@
 
 [fetch]
 	prune = true
+
 [diff]
 	compactionHeuristic = true
+
 [user]
 	name = Steve Byerly
 	email = steven.j.byerly@gmail.com
