@@ -59,7 +59,11 @@ brew install mtr
 
 
 # Install dev tools
+brew install git
+brew install node # This installs `npm` too using the recommended installation method
 brew install python3
+brew install pipenv
+brew install mysql
 brew install kubernetes-cli
 brew install kubernetes-helm
 brew install kops
@@ -69,14 +73,13 @@ brew install hugo
 brew install the_silver_searcher
 brew install fzf
 
-brew install git
 brew install imagemagick --with-webp
-brew install node # This installs `npm` too using the recommended installation method
 brew install pv
 brew install rename
 brew install tree
 brew install zopfli
 brew install ffmpeg --with-libvpx
+brew install fonttools
 
 brew install terminal-notifier
 

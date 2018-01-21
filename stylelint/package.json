@@ -1,0 +1,26 @@
+{
+  "name": "stylelint-config",
+  "version": "1.0.0",
+  "description": "Configuration for stylelint",
+  "license": "ISC",
+  "author": {
+    "name": "Steve Byerly",
+    "url": "https://github.com/SteveByerly"
+  },
+  "main": "css.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "stylelint-config-standard": "16.0.0",
+    "stylelint-declaration-use-variable": "1.6.0",
+    "stylelint-order": "0.4.4",
+    "stylelint-scss": "1.4.4"
+  },
+  "devDependencies": {
+    "stylelint": "7.10.1"
+  },
+  "peerDependencies": {
+    "stylelint": "^7.10.0"
+  }
+}
