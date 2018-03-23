@@ -94,3 +94,6 @@ alias update_brew_npm_gem='brew_update; npm install npm -g; npm update -g; sudo 
 
 # Python aliases
 alias rm_pyc="find . -name '*.pyc' -exec rm -rf {} \;"
+
+# Django aliases
+alias runserver="python manage.py runserver"

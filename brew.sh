@@ -42,6 +42,9 @@ brew install homebrew/dupes/screen
 # z hopping around folders
 brew install z
 
+# Simplified and community-driven man pages
+brew install tldr
+
 # run this script when this file changes guy.
 brew install entr
 
@@ -64,9 +67,16 @@ brew install node # This installs `npm` too using the recommended installation m
 brew install python3
 brew install pipenv
 brew install mysql
+
+
+# Install cloud tools
+brew install azure-cli
 brew install kubernetes-cli
 brew install kubernetes-helm
 brew install kops
+
+
+# Install web tools
 brew install hugo
 
 # Install other useful binaries
