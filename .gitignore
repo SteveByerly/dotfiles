@@ -4,6 +4,7 @@
 .extra
 
 # working files
+.vim/.netrwhist
 .vim/viminfo
 .vim/swaps/*
 .vim/undo

@@ -11,7 +11,7 @@ set nocompatible
 " Syntax highlighting {{{
 set t_Co=256
 set background=dark
-syntax on
+syntax enable
 colorscheme molotov
 " }}}
 

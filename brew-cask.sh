@@ -8,53 +8,86 @@ brew update && brew upgrade
 brew tap caskroom/versions
 brew tap caskroom/fonts
 
+
 # -----------------------------------------------------------
 # OS Utils
 # -----------------------------------------------------------
+# Window Management
 brew cask install spectacle
-brew cask install 1password
-brew cask install flux
+# Device Management
+brew cask install bettertouchtool
+
 
 # -----------------------------------------------------------
 # Storage Management
 # -----------------------------------------------------------
+brew cask install disk-inventory-x
 brew cask install dropbox
 brew cask install google-backup-and-sync
-brew cask install disk-inventory-x
+
+
+# -----------------------------------------------------------
+# Security Management
+# -----------------------------------------------------------
+# Password Manager
+brew cask install 1password
+# Key Manager
+brew cask install gpg-suite
+
 
 # -----------------------------------------------------------
 # IDEs
 # -----------------------------------------------------------
+# Multi-Database management tools
+brew cask install dbeaver-community
+brew cask install datagrip
+# MySQL management tool
+brew cask install sequel-pro
+
+# Code Editors
 brew cask install sublime-text
 brew cask install visual-studio-code
-brew cask install sequel-pro
+
+# REST Clients
+brew cask install insomnia
+brew cask install postman
+
 
 # -----------------------------------------------------------
 # Browsers
 # -----------------------------------------------------------
+brew cask install brave
 brew cask install google-chrome
 brew cask install firefox
-brew cask install brave
 
-brew cask install google-chrome-canary
 brew cask install firefoxnightly
-brew cask install chromium
+brew cask install google-chrome-canary
+
 
 # -----------------------------------------------------------
 # Dev Tools
 # -----------------------------------------------------------
 brew cask install iterm2
+# Cross-platform, fast, feature full, GPU based terminal emulator
+brew cask install kitty
+brew cask install docker
+brew cask install virtualbox
+
+
+# -----------------------------------------------------------
+# Languages/Frameworks
+# -----------------------------------------------------------
 brew cask install dotnet
 brew cask install dotnet-sdk
-brew cask install virtualbox
-brew cask install docker
+
 
 # -----------------------------------------------------------
 # Media
 # -----------------------------------------------------------
-brew cask install vlc
-brew cask install spotify
 brew cask install miro-video-converter
+brew cask install spotify
+brew cask install vlc
+
 
 # -----------------------------------------------------------
 # Image Editing
@@ -62,27 +95,32 @@ brew cask install miro-video-converter
 brew cask install gimp
 brew cask install imagealpha
 brew cask install imageoptim
+brew cask install krita
+
 
 # -----------------------------------------------------------
 # Display Capture
 # -----------------------------------------------------------
-# Video editing and screen recording 
-brew cask install screenflow
-# An instant way to take a screenshot/GIF and bookmark
-# anything you see
+# An instant way to take a screenshot/GIF and bookmark anything you see
 brew cask install gyazo
 # Simple animated screen captures
 brew cask install licecap
+# Video editing and screen recording
+brew cask install screenflow
+
 
 # -----------------------------------------------------------
 # Misc
 # -----------------------------------------------------------
-brew cask install gpgtools
+# Android File Transfer
+android-file-transfer
+
 # USB tethering
 brew cask install horndis
+
 
 # -----------------------------------------------------------
 # Cleanup
 # -----------------------------------------------------------
-brew cleanup
+brew cleanup -s
 brew cask cleanup

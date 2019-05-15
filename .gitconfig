@@ -34,15 +34,6 @@
 	# https://git-scm.com/docs/git-update-index#_untracked_cache
 	untrackedCache = true
 
-[pager]
-	# insanely beautiful diffs ==> npm install -g diff-so-fancy
-	diff = diff-so-fancy | less --tabs=4 -RFX
-	show = diff-so-fancy | less --tabs=4 -RFX
-
-[interactive]
-  # disabled until github.com/so-fancy/diff-so-fancy/pull/172 is resolved :(
-	# diffFilter = "diff-so-fancy"
-
 # so much color
 [color]
 	ui = always
@@ -73,19 +64,61 @@
 	changed = green
 	untracked = cyan
 
+[commit]
+	gpgSign = true
+
+[diff]
+	algorithm = histogram
+	colorMoved = dimmed_zebra
+	indentHeuristic = true
+	renameLimit = 1000
+
+[fetch]
+	prune = true
+
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+
+# correct typos
+[help]
+	autocorrect = 1
+
+#[init]
+#	templatedir = ~/.git_template
+
+# disabled until github.com/so-fancy/diff-so-fancy/pull/172 is resolved :(
+# [interactive]
+	# diffFilter = "diff-so-fancy"
+
 # git mergetool
 [merge]
 	tool = opendiff
+	renameLimit = 1000
+
+[pager]
+	# insanely beautiful diffs ==> npm install -g diff-so-fancy
+	diff = diff-so-fancy | less --tabs=4 -RFX
+	show = diff-so-fancy | less --tabs=4 -RFX
+
+# push easily. http://stackoverflow.com/a/23918418/89484
+[push]
+	default = current
+	recurseSubmodules = check
+
+[receive]
+	advertisePushOptions = true
 
 # rewrites of repo paths
-# [url "git@github.com:"]
-#	insteadOf = "https://github.com/"
-#	pushInsteadOf = "github:"
-#	pushInsteadOf = "git://github.com/"
-#	pushInsteadOf = "https://github.com/"
+[url "git@github.com:"]
+	insteadOf = "https://github.com/"
+	pushInsteadOf = "github:"
+	pushInsteadOf = "git://github.com/"
+	pushInsteadOf = "https://github.com/"
 
-# [url "git://github.com/"]
-#	insteadOf = "github:"
+[url "git://github.com/"]
+	insteadOf = "github:"
 
 [url "git@gist.github.com:"]
 	pushInsteadOf = "gist:"
@@ -94,34 +127,6 @@
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
 
-# correct typos
-[help]
-	autocorrect = 1
-
-# push easily. http://stackoverflow.com/a/23918418/89484
-[push]
-	default = current
-
 # use separate file for username / github token / etc
 [include]
-  path = ~/.gitconfig.local
-
-#[init]
-#	templatedir = ~/.git_template
-
-[filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
-
-[fetch]
-	prune = true
-
-[diff]
-    # Show blocks of moved text of at least 20 alphanumeric characters differently than adds/deletes
-    # https://blog.github.com/2018-04-05-git-217-released/
-    colorMoved = zebra
-
-[user]
-	name = Steve Byerly
-	email = steven.j.byerly@gmail.com
+	path = ~/.gitconfig.local

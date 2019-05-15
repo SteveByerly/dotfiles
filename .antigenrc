@@ -8,11 +8,14 @@ antigen bundles <<EOBUNDLES
   # Python helpers
   pip
   virtualenvwrapper
+  # This fixed a previously broken virtualenvwrapper
   # https://gist.github.com/SteveByerly/0ffc974ac08a0ec112026d7ffa30406b
 
   # Utils
+  aws
+  # This fixed a previously broken aws
+  # https://gist.github.com/SteveByerly/9e8a6e313e7e996228fbe0faad65e2b1
   git
-  https://gist.github.com/SteveByerly/9e8a6e313e7e996228fbe0faad65e2b1
 
   # Helper for extracting different types of archives.
   extract
