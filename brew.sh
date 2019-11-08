@@ -69,6 +69,8 @@ brew install git
 brew install node # This installs `npm` too using the recommended installation method
 brew install python3
 brew install pipenv
+brew install pyenv
+brew install pyenv-virtualenv
 brew install mysql
 brew install terraform
 brew install terraform_landscape
