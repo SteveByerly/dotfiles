@@ -2,6 +2,7 @@
   "breadcrumbs.enabled": true,
   "diffEditor.codeLens": false,
   "diffEditor.ignoreTrimWhitespace": false,
+  "editor.bracketPairColorization.enabled": true,
   "editor.codeLens": false,
   "editor.cursorBlinking": "phase",
   "editor.cursorWidth": 3,
