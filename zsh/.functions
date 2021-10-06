@@ -1,0 +1,117 @@
+#!/bin/bash
+
+# Git commit browser. Requires fzf
+git-log() {
+  git log --graph --color=always \
+    --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+    fzf --ansi --no-sort --reverse --tiebreak=index --toggle-sort=\` \
+      --bind "ctrl-m:execute:
+                echo '{}' | grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R'"
+}
+
+# Copy w/ progress
+cp_p() {
+  rsync -WavP --human-readable --progress "$1" "$2"
+}
+
+# Get gzipped size
+function gz-size() {
+  local filepath=$1
+
+  echo "orig size    (bytes): "
+  wc -c "$filepath"
+  echo "gzipped size (bytes): "
+  gzip -c "$filepath" | wc -c
+}
+
+function local-ip() {
+  function _localip() {
+    local ifaddr
+    ifaddr=$(ipconfig getifaddr "$1")
+    echo "📶  ${ifaddr}";
+  }
+
+  export -f _localip
+  local purple="\x1B\[35m"
+  local reset="\x1B\[m"
+
+  networksetup -listallhardwareports |
+    sed -r "s/Hardware Port: (.*)/${purple}\1${reset}/g" |
+    sed -r "s/Device: (en.*)$/_localip \1/e" |
+    sed -r "s/Ethernet Address:/📘 /g" |
+    sed -r "s/(VLAN Configurations)|==*//g"
+}
+
+# Extract archives - use: extract <file>
+# Based on http://dotfiles.org/~pseup/.bashrc
+function extract() {
+  if [ -f "$1" ]; then
+    local didfolderexist=false
+    local filename
+    local foldername
+    local fullpath
+
+    filename=$(basename "$1")
+    foldername="${filename%%.*}"
+    fullpath=$(perl -e 'use Cwd "abs_path";print abs_path(shift)' "$1")
+
+    if [ -d "$foldername" ]; then
+      didfolderexist=true
+      read -rp "$foldername already exists, do you want to overwrite it? (y/n) " -n 1
+      echo
+      if [[ $REPLY =~ ^[Nn]$ ]]; then
+        return
+      fi
+    fi
+
+    mkdir -p "$foldername"
+    cd "$foldername" || exit
+
+    case $1 in
+    *.tar.bz2) tar xjf "$fullpath" ;;
+    *.tar.gz) tar xzf "$fullpath" ;;
+    *.tar.xz) tar Jxvf "$fullpath" ;;
+    *.tar.Z) tar xzf "$fullpath" ;;
+    *.tar) tar xf "$fullpath" ;;
+    *.taz) tar xzf "$fullpath" ;;
+    *.tb2) tar xjf "$fullpath" ;;
+    *.tbz) tar xjf "$fullpath" ;;
+    *.tbz2) tar xjf "$fullpath" ;;
+    *.tgz) tar xzf "$fullpath" ;;
+    *.txz) tar Jxvf "$fullpath" ;;
+    *.zip) unzip "$fullpath" ;;
+    *) echo "'$1' cannot be extracted via extract()" && cd .. && ! $didfolderexist && rm -r "$foldername" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+# Who has used the camera?
+camera-usage() {
+  echo "Checking to see who is using the iSight camera… 📷"
+  usedby=$(lsof | grep -w "AppleCamera\|USBVDC\|iSight" | awk '{printf $2"\n"}' | xargs ps)
+  echo -e "Recent camera uses:\n$usedby"
+}
+
+# Animated gifs from any video
+# via gist.github.com/SlexAxton/4989674
+gifify() {
+  if [[ -n "$1" ]]; then
+    if [[ $2 == '--good' ]]; then
+      ffmpeg -i "$1" -r 10 -vcodec png out-static-%05d.png
+      time convert -verbose +dither -layers Optimize -resize 900x900\> out-static*.png GIF:- | gifsicle --colors 128 --delay=5 --loop --optimize=3 --multifile - >"$1.gif"
+      rm out-static*.png
+    else
+      ffmpeg -i "$1" -s 600x400 -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=3 >"$1.gif"
+    fi
+  else
+    echo "proper usage: gifify <input_movie.mov>. You DO need to include extension."
+  fi
+}
+
+# Turn video into webm
+webmify() {
+  ffmpeg -i "$1" -vcodec libvpx -acodec libvorbis -isync -copyts -aq 80 -threads 3 -qmax 30 -y "$2" "$1.webm"
+}

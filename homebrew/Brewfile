@@ -1,0 +1,214 @@
+# 'brew tap'
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "bramstein/webfonttools"
+tap "hashicorp/tap"
+
+# set arguments for all 'brew install --cask' commands
+cask_args require_sha: true
+
+# System
+
+## System Libraries
+
+# Manage compile and link flags for libraries
+brew "pkg-config"
+
+# Library for command-line editing
+brew "readline"
+
+# GNU core utilities (those that come with OS X are outdated)
+brew "coreutils"
+brew "moreutils"
+# GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
+brew "findutils"
+# GNU `sed`, overwriting the built-in `sed`
+brew "gnu-sed"
+brew "gnupg"
+brew "wget"
+
+## Monitoring
+# An interactive process viewer for Unix
+brew "htop"
+# Display an interface's bandwidth usage
+brew "iftop"
+# Top-like interface for container metrics
+brew "ctop"
+
+# Terminal
+
+brew "screen"
+
+## Shell: Bash
+
+# Bourne-Again SHell, a UNIX command interpreter - use Latest Bash version
+brew "bash"
+# Programmable completion for Bash 4.1+
+brew "bash-completion@2"
+
+## Shell: Zsh
+# UNIX shell (command interpreter)
+# INFO: Need to add `/usr/local/bin/zsh` to `/etc/shells`
+brew "zsh"
+brew "spaceship"
+
+# Those that come with macOS are outdated
+brew "coreutils"
+brew "ffmpeg"
+
+brew "git"
+brew "git-lfs"
+brew "diff-so-fancy"
+
+brew "gnupg"
+brew "grep"
+# brew "httpie"
+# brew "hub"
+# Mac App Store manager
+brew "mas"
+brew "tldr"
+brew "z"
+brew "zlib"
+
+# Manage the Trash bin
+brew "trash"
+# List directories in a tree structure
+brew "tree"
+
+
+# Development
+brew "mysql"
+brew "postgres"
+# brew "nginx"
+brew "go"
+brew "node"
+brew "yarn"
+brew "pyenv"
+brew "pyenv-virtualenv"
+
+# Binaries
+brew "awscli"
+brew "azure-cli"
+brew "shfmt"
+brew "shellcheck"
+
+
+brew "imagemagick"
+
+brew "ack"
+brew "pv"
+brew "rename"
+brew "zopfli"
+brew "fonttools"
+brew "jq"
+brew "ncdu"
+brew "p7zip"
+brew "rlwrap"
+brew "ssh-copy-id"
+
+brew "vim"
+
+
+
+brew "hashicorp/tap/packer"
+brew "hashicorp/tap/terraform"
+
+
+
+# -----------------------------------------------------------
+# OS Utils
+# -----------------------------------------------------------
+# Device Management
+cask "bettertouchtool"
+cask "cakebrew"
+
+
+# -----------------------------------------------------------
+# Storage Management
+# -----------------------------------------------------------
+cask "android-file-transfer"
+cask "disk-inventory-x"
+cask "google-backup-and-sync", args: { require_sha: false }
+
+# -----------------------------------------------------------
+# Security Management
+# -----------------------------------------------------------
+# Password Manager
+cask "1password"
+cask "1password-cli"
+# Key Manager
+cask "gpg-suite"
+cask "keybase"
+
+# -----------------------------------------------------------
+# IDEs
+# -----------------------------------------------------------
+# Multi-Database management tools
+cask "dbeaver-community"
+
+# Code Editors
+# cask "sublime-text"
+cask "visual-studio-code"
+
+# REST Clients
+# cask "insomnia"
+cask "postman"
+
+
+# -----------------------------------------------------------
+# Browsers
+# -----------------------------------------------------------
+cask "firefox"
+cask "google-chrome", args: { require_sha: false }
+
+
+# -----------------------------------------------------------
+# Dev Tools
+# -----------------------------------------------------------
+cask "iterm2"
+# Cross-platform, fast, feature full, GPU based terminal emulator
+# cask "kitty"
+cask "docker"
+# cask "virtualbox"
+
+
+# -----------------------------------------------------------
+# Languages/Frameworks
+# -----------------------------------------------------------
+cask "dotnet"
+cask "dotnet-sdk"
+
+
+# -----------------------------------------------------------
+# Media
+# -----------------------------------------------------------
+cask "spotify", args: { require_sha: false }
+cask "vlc"
+
+
+# -----------------------------------------------------------
+# Image Editing
+# -----------------------------------------------------------
+cask "gimp"
+cask "inkscape"
+cask "imageoptim"
+
+
+# -----------------------------------------------------------
+# Display Capture
+# -----------------------------------------------------------
+# An instant way to take a screenshot/GIF and bookmark anything you see
+cask "gyazo"
+# Simple animated screen captures
+# cask "licecap"
+# Video editing and screen recording
+# cask "screenflow"
+
+cask "obsidian"
+cask "slack"
+cask "zoom"
+
+cask "microsoft-outlook"
+cask "microsoft-powerpoint"
+cask "microsoft-word"

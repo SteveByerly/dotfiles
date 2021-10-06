@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Filesystem
+alias ll="ls -lh"
+
+alias cp="cp -i -v"
+alias mv="mv -i -v"
+alias rm="rm -i -v"
+
+# Recursively delete junk
+alias rm_dsstore="find . -name '*.DS_Store' -type f -ls -delete"
+
+alias diskspace="df -P -kHl"
+
+# Networking
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"

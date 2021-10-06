@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Base",
+
+  "compilerOptions": {
+    //-----------------------------------------------------
+    // Type Checking
+    //-----------------------------------------------------
+    "allowUnreachableCode": false,               /* Warn  on code which is provably unreachable due to the use of JavaScript syntax */
+    "alwaysStrict": true,                        /* Parse in strict mode and emit "use strict" for each source file. */
+    "exactOptionalPropertyTypes": true,          /* v4.4 - Apply stricter rules around how to handle properties on type or interfaces which have a ? prefix. */
+    "noFallthroughCasesInSwitch": true,          /* Report errors for fallthrough cases in switch statement. */
+    "noImplicitAny": true,                       /* Raise error on expressions and declarations with an implied 'any' type. */
+    "noImplicitOverride": true,                  /* Ensure overriding members in derived classes are marked with an 'override' modifier. */
+    "noImplicitReturns": true,                   /* Report error when not all code paths in function return a value. */
+    "noImplicitThis": true,                      /* Raise error on 'this' expressions with an implied 'any' type. */
+    "noPropertyAccessFromIndexSignature": true,  /* Require undeclared properties from index signatures to use element accesses. */
+    "noUncheckedIndexedAccess": true,            /* Include 'undefined' in index signature results */
+    "noUnusedLocals": true,                      /* Report errors on unused locals. */
+    "noUnusedParameters": true,                  /* Report errors on unused parameters. */
+    "strict": true,                              /* Enable all strict type-checking options. */
+    "strictBindCallApply": true,                 /* Enable strict 'bind', 'call', and 'apply' methods on functions. */
+    "strictFunctionTypes": true,                 /* Enable strict checking of function types. */
+    "strictNullChecks": true,                    /* Enable strict null checks. */
+    "strictPropertyInitialization": true,        /* Enable strict checking of property initialization in classes. */
+    // "useUnknownInCatchVariables": true,       /* v4.4 - Change the type of the variable in a catch clause from `any` to `unknown`. */
+
+    //-----------------------------------------------------
+    // Modules
+    //-----------------------------------------------------
+    "allowUmdGlobalAccess": false, /* Allow accessing UMD globals from modules. */
+    // "baseUrl": "./",            /* Base directory to resolve non-absolute module names. */
+    "module": "CommonJS",          /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */
+    "moduleResolution": "node",    /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
+    "noResolve": false,            /* Disable examining the initial set of files for import and <reference directives and adding these resolved files to your program. */
+    // "paths": {},                /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
+    "resolveJsonModule": false,    /* Allows importing modules with a ‘.json’ extension, which is a common practice in node projects. */
+    // "rootDir": "./",            /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
+    // "rootDirs": [],             /* List of root folders whose combined content represents the structure of the project at runtime. */
+    // "typeRoots": [],            /* List of folders to include type definitions from. */
+    // "types": [],                /* Type declaration files to be included in compilation. */
+
+    //-----------------------------------------------------
+    // Emit
+    //-----------------------------------------------------
+    "declaration": false,              /* Generates corresponding '.d.ts' file. */
+    // "declarationDir": "./types"     /* Configure the root directory for where declaration files are emitted. */
+    // "declarationMap": true,         /* Generates a sourcemap for each corresponding '.d.ts' file. */
+    "downlevelIteration": true,        /* Provide full support for iterables in 'for-of', spread, and destructuring when targeting 'ES5' or 'ES3'. */
+    "emitDeclarationOnly": false,      /* Only emit .d.ts files; do not emit .js files. */
+    "importHelpers": false,            /* Import emit helpers from 'tslib'. */
+    "importsNotUsedAsValues": "error", /* Controls how `import` works. */
+    "inlineSourceMap": false,          /* Emit a single file with source maps instead of having a separate file. */
+    "inlineSources": false,            /* Emit the source alongside the sourcemaps within a single file; requires '--inlineSourceMap' or '--sourceMap' to be set. */
+    // "mapRoot": "",                  /* Specify the location where debugger should locate map files instead of generated locations. */
+    // "noEmit": false,                /* Do not emit outputs. */
+    // "noEmitHelpers": false,         /* Provide implementations in the global scope for the helpers you use and completely turn off emitting of helper functions. */
+    "noEmitOnError": false,            /* Do not emit compiler output files like JavaScript source code, source-maps or declarations if any errors were reported. */
+    // "outDir": "./",                 /* Redirect output structure to the directory. */
+    // "outFile": "./",                /* Concatenate and emit output to single file. */
+    "preserveConstEnums": false,       /* Do not erase const enum declarations in generated code. */
+    "removeComments": true,            /* Do not emit comments to output. */
+    "sourceMap": false,                /* Generates corresponding '.map' file. */
+    // "sourceRoot": "",               /* Specify the location where debugger should locate TypeScript files instead of source locations. */
+
+    //-----------------------------------------------------
+    // JavaScript Support
+    //-----------------------------------------------------
+    "allowJs": false,             /* Allow JavaScript files to be compiled. */
+    // "checkJs": true,           /* Report errors in .js files. */
+    // "maxNodeModuleJsDepth": 0, /* The maximum dependency depth to search under `node_modules` and load JavaScript files. */
+
+    //-----------------------------------------------------
+    // Editor Support
+    //-----------------------------------------------------
+    // "disableSizeLimit": false, /* The upper limit to the amount of memory TypeScript will allocate. */
+    // "plugins": [],             /* List of language service plugins to run inside the editor. */
+
+    //-----------------------------------------------------
+    // Interop Constraints
+    //-----------------------------------------------------
+    "allowSyntheticDefaultImports": false,    /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */
+    "esModuleInterop": true,                  /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
+    "forceConsistentCasingInFileNames": true, /* Disallow inconsistently-cased references to the same file. */
+    "isolatedModules": false,                 /* Transpile each file as a separate module (similar to 'ts.transpileModule'). */
+    // "preserveSymlinks": true,              /* Do not resolve the real path of symlinks. */
+
+    //-----------------------------------------------------
+    // Language and Environment
+    //-----------------------------------------------------
+    // "emitDecoratorMetadata": true,       /* Enables experimental support for emitting type metadata for decorators. */
+    // "experimentalDecorators": true,      /* Enables experimental support for ES7 decorators. */
+    // "jsx": "react",                      /* Specify JSX code generation: 'preserve', 'react-native', 'react', 'react-jsx' or 'react-jsxdev'. */
+    // "jsxFactory": "React.createElement", /* Changes the function called in .js files when compiling JSX Elements using the classic JSX runtime. */
+    // "jsxFragmentFactory": "Fragment",    /* Specify the JSX fragment factory function to use when targeting react JSX emit with jsxFactory compiler option is specified. */
+    // "jsxImportSource": "react",          /* Declares the module specifier to be used for importing the jsx and jsxs factory functions when using jsx as "react-jsx" or "react-jsxdev". */
+    // "lib": [],                           /* Specify library files to be included in the compilation. */
+    "noLib": false,                         /* Disables the automatic inclusion of any library files. */
+    // "target": "ES6",                     /* Changes which JS features are downleveled and which are left intact.. */
+    // "useDefineForClassFields": false,    /* migrating to the upcoming ECMA runtime behavior of class fields. */
+
+    //-----------------------------------------------------
+    // Projects
+    //-----------------------------------------------------
+    // "composite": true,                                /* Enable project compilation */
+    // "disableReferencedProjectLoad": false,            /* Disable the automatic loading of all projects. */
+    // "disableSolutionSearching": false,                /* Provides a way to declare that you do not want a project to be included when using features like find all references or jump to definition in an editor. */
+    // "disableSourceOfProjectReferenceRedirect": false, /* Provides a way to go back to the pre-3.7 behavior where d.ts files were used to as the boundaries between modules. */
+    "incremental": false,                                /* Enable incremental compilation */
+    // "tsBuildInfoFile": "./",                          /* Specify file to store incremental compilation information */
+
+    //-----------------------------------------------------
+    // Output Formatting
+    //-----------------------------------------------------
+    "noErrorTruncation": true,    /* Do not truncate error messages. */
+    "preserveWatchOutput": false, /* Keep outdated console output in watch mode instead of clearing the screen every time a change happened. */
+    "pretty": true,               /* Stylize errors and messages using color and context. */
+
+    //-----------------------------------------------------
+    // Completeness
+    //-----------------------------------------------------
+    "skipDefaultLibCheck": false, /* Skip type checking of default library declaration files. */
+    "skipLibCheck": false,        /* Skip type checking of declaration files. */
+
+    //-----------------------------------------------------
+    // Watch Options
+    //-----------------------------------------------------
+    "assumeChangesOnlyAffectDirectDependencies": true /* Avoid rechecking/rebuilding all truly possibly-affected files, and only recheck/rebuild files that have changed as well as files that directly import them. */
+  }
+}

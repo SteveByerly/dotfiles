@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Node 12.x",
+  "extends": "./tsconfig.base.json",
+
+  "compilerOptions": {
+    "lib": ["es2019", "es2020.bigint", "es2020.promise", "es2020.string"],
+    "target": "es2019"
+  }
+}

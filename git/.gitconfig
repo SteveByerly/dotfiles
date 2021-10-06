@@ -1,0 +1,127 @@
+[alias]
+	c = commit -am
+	up = pull
+	p = push
+	s = status
+	sclone = clone --depth=1
+	co = checkout
+	df = diff --color --color-words --abbrev
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+
+	# Show the diff between the latest commit and the current state
+	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
+	reup = rebase-update # depot_tools specific
+
+[core]
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
+
+	# Treat spaces before tabs and all kinds of trailing whitespace as an error
+	# [default] trailing-space: looks for spaces at the end of a line
+	# [default] space-before-tab: looks for spaces before tabs at the beginning of a line
+	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+
+	# Make `git rebase` safer on macOS
+	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+	trustctime = false
+
+	# Prevent showing files whose names contain non-ASCII symbols as unversioned.
+	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
+	precomposeunicode = false
+
+	# Speed up commands involving untracked files such as `git status`.
+	# https://git-scm.com/docs/git-update-index#_untracked_cache
+	untrackedCache = true
+
+[color]
+	ui = always
+
+[color "diff"]
+	meta = "yellow bold"
+	commit = "green bold"
+	frag = "magenta bold"
+	old = "red bold"
+	new = "green bold"
+	whitespace = "red reverse"
+	newMoved = "cyan"
+	oldMoved = "blue"
+
+[color "diff-highlight"]
+	oldNormal = "red bold"
+	oldHighlight = "red bold 52"
+	newNormal = "green bold"
+	newHighlight = "green bold 22"
+
+[color "branch"]
+	current = "yellow reverse"
+	local = "yellow"
+	remote = "green"
+
+[color "status"]
+	added = "yellow"
+	changed = "green"
+	untracked = "cyan"
+
+[commit]
+	gpgSign = true
+
+[diff]
+	algorithm = histogram
+	colorMoved = dimmed_zebra
+	indentHeuristic = true
+	renameLimit = 1000
+
+[fetch]
+	prune = true
+
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+
+[help]
+	autocorrect = 1
+
+[init]
+	defaultBranch = "main"
+#	templatedir = ~/.git_template
+
+[interactive]
+	diffFilter = "diff-so-fancy --patch"
+
+[merge]
+	tool = opendiff
+	renameLimit = 1000
+
+[pager]
+	diff = diff-so-fancy | less --tabs=4 -RFX
+	show = diff-so-fancy | less --tabs=4 -RFX
+
+[push]
+	default = current
+	recurseSubmodules = check
+
+[receive]
+	advertisePushOptions = true
+
+# rewrites of repo paths
+[url "git@github.com:"]
+	insteadOf = "https://github.com/"
+	pushInsteadOf = "github:"
+	pushInsteadOf = "git://github.com/"
+	pushInsteadOf = "https://github.com/"
+
+[url "git://github.com/"]
+	insteadOf = "github:"
+
+[url "git@gist.github.com:"]
+	pushInsteadOf = "gist:"
+	pushInsteadOf = "git://gist.github.com/"
+
+[url "git://gist.github.com/"]
+	insteadOf = "gist:"
+
+# Separate file for personal config
+[include]
+	path = ~/.gitconfig.local
